@@ -28,6 +28,14 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
+col1, col2 = st.columns(2)
+
+with col1:
+    text_input = st.text_area("Masukkan Teks Arab:", height=300)
+
+with col2:
+    if 'hasil_harakat' in st.session_state:
+        st.text_area("Hasil Harakat:", value=st.session_state.hasil_harakat, height=300)
 
 # Fungsi Mesin
 @st.cache_resource
