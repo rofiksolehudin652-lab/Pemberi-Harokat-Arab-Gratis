@@ -29,7 +29,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Input Teks")
     text_input = st.text_area("Tempelkan teks Arab di sini:", placeholder="...مرحبا كيف حالك", height=300)
-    tombol = st.button("✨ Beri Harakat Sekarang")
+                    tombol = st.button("✨ Beri Harakat Sekarang")
 
 with col2:
     st.subheader("Hasil")
