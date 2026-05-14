@@ -50,8 +50,10 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Input Teks")
     tombol = st.button("✨ Beri Harakat Sekarang")
+    text_input = st.subheader("Hasil") ("Tempelkan teks Arab di sini:", placeholder="...مرحبا كيف حالك", height=250)
+
 with col2:
-    st.subheader("Hasil")
+    
     if tombol:
         if text_input.strip():
             with st.spinner("Sedang memproses..."):
