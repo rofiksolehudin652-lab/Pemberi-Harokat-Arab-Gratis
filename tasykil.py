@@ -1,29 +1,51 @@
 import streamlit as st
 import mishkal.tashkeel
 
-st.set_page_config(page_title="Pemberi Harakat Arab", page_icon="🌙")
-st.title("Aplikasi Harakat Arab Otomatis")
+# Judul Tab Browser
+st.set_page_config(page_title="Al-Mu'rib: Harakat Otomatis", page_icon="🌙", layout="wide")
 
-# Fungsi untuk menyiapkan mesin harakat
+# Gaya Tampilan (CSS)
+st.markdown("""
+    <style>
+    .main { background-color: #f9f9f9; }
+    .stTextArea textarea { font-size: 22px !important; direction: rtl; }
+    .stButton>button { background-color: #2e7d32; color: white; height: 3em; width: 100%; border-radius: 10px; font-weight: bold; }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title("🌙 Al-Mu'rib: Aplikasi Harakat Arab")
+st.write("Berikan harakat pada teks Arab gundul secara instan.")
+
+# Fungsi Mesin
 @st.cache_resource
 def siapkan_mesin():
-    # Mengambil kelas pertama yang ditemukan di library kamu
     daftar = dir(mishkal.tashkeel)
     NamaKelas = getattr(mishkal.tashkeel, daftar[0])
-    # Menyalakan mesin (inisialisasi)
     return NamaKelas()
 
-text_input = st.text_area("Masukkan teks Arab gundul:", height=200)
+# Tampilan Kolom Berdampingan
+col1, col2 = st.columns(2)
 
-if st.button("Munculkan Harakat ✨"):
-    if text_input.strip():
-        try:
-            mesin = siapkan_mesin()
-            # Mencoba perintah harakat yang paling umum
-            hasil = mesin.tashkeel(text_input)
-            st.success("Selesai!")
-            st.text_area("Hasil:", value=hasil, height=200)
-        except Exception as e:
-            st.error(f"Gagal memproses. Detail: {e}")
-    else:
-        st.warning("Silakan isi teksnya dulu.")
+with col1:
+    st.subheader("Input Teks")
+    text_input = st.text_area("Tempelkan teks Arab di sini:", placeholder="...مرحبا كيف حالك", height=250)
+    tombol = st.button("✨ Beri Harakat Sekarang")
+
+with col2:
+    st.subheader("Hasil")
+    if tombol:
+        if text_input.strip():
+            with st.spinner("Sedang memproses..."):
+                try:
+                    mesin = siapkan_mesin()
+                    hasil = mesin.tashkeel(text_input)
+                    st.text_area("Hasil Harakat:", value=hasil, height=250)
+                    st.balloons() # Efek balon saat sukses
+                except Exception as e:
+                    st.error(f"Maaf, ada kendala: {e}")
+        else:
+            st.warning("Silakan isi teks terlebih dahulu.")
+
+# Informasi di bawah
+st.divider()
+st.caption("Dikembangkan dengan ❤️ menggunakan Streamlit dan Mishkal AI.")
