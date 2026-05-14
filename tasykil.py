@@ -54,13 +54,14 @@ with col2:
 # Informasi di bawah
 st.divider()
 st.markdown("""
-    ### 📌 Cara Penggunaan:
+    ###  Cara Penggunaan:
     1. **Tempelkan** teks Arab tanpa harakat pada kotak input di sebelah kiri.
     2. **Klik tombol** "Beri Harakat Sekarang" untuk memulai proses.
     3. **Salin hasil** yang muncul di kotak sebelah kanan untuk kebutuhan Anda.
     
-    *Catatan: Hasil harakat dihasilkan secara otomatis oleh AI. Kami menyarankan untuk tetap melakukan pengecekan ulang (muroja'ah) untuk teks-teks keagamaan yang sangat formal.*
+    *Catatan: Hasil harakat dihasilkan secara otomatis oleh AI. 
+    Kami menyarankan untuk tetap melakukan pengecekan ulang (muroja'ah) untuk teks-teks keagamaan yang sangat formal.*
     
     ---
-    **Dikembangkan oleh [Rofik]** | Ditenagai oleh Mishkal Engine 🚀
+    **Dikembangkan oleh ROFCO** | Made in indonesian
 """)
