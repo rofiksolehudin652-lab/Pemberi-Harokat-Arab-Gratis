@@ -14,7 +14,20 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 st.title("🌙 Al-Mu'rib: Aplikasi Harakat Arab")
-st.write("Berikan harakat pada teks Arab gundul secara instan.")
+st.write("Berikan harakat pada teks Arab gundul secara otomatis.")
+st.markdown("""
+    <style>
+    .main {
+        background-color: #f0f2f6;
+    }
+    .stButton>button {
+        width: 100%;
+        border-radius: 20px;
+        background-color: #007bff;
+        color: white;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Fungsi Mesin
 @st.cache_resource
