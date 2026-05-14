@@ -28,7 +28,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Input Teks")
-    text_input = st.text_area("Tempelkan teks Arab di sini:", placeholder="...مرحبا كيف حالك", height=1000)
+    text_input = st.text_area("Tempelkan teks Arab di sini:", placeholder="...مرحبا كيف حالك", height=300)
     tombol = st.button("✨ Beri Harakat Sekarang")
 
 with col2:
@@ -39,7 +39,7 @@ with col2:
                 try:
                     mesin = siapkan_mesin()
                     hasil = mesin.tashkeel(text_input)
-                    st.text_area("Hasil Harakat:", value=hasil, height=1000)
+                    st.text_area("Hasil Harakat:", value=hasil, height=300)
                     st.balloons() # Efek balon saat sukses
                 except Exception as e:
                     st.error(f"Maaf, ada kendala: {e}")
