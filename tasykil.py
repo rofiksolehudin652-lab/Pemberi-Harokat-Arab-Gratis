@@ -7,7 +7,7 @@ st.set_page_config(page_title="Al-Mu'rib: Harakat Otomatis", page_icon="🌙", l
 # Gaya Tampilan (CSS)
 st.markdown("""
     <style>
-    .main { background-color: #f5f5f5; }
+    .main { background-color: #ffffff; }
     .stTextArea textarea { font-size: 22px !important; direction: rtl; }
     .stButton>button { background-color: #2e7d32; color: white; height: 3em; width: 100%; border-radius: 10px; font-weight: bold; }
     </style>
