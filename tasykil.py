@@ -15,6 +15,11 @@ st.markdown("""
 
 st.title("🌙 Al-Mu'rib: Aplikasi Harakat Arab")
 st.write("Berikan harakat pada teks Arab gundul secara instan.")
+st.markdown("""
+    **Transformasikan teks Arab gundul Anda menjadi teks berharakat secara instan.** 
+    Aplikasi ini menggunakan teknologi pemrosesan bahasa alami (NLP) untuk membantu para pelajar, 
+    pengajar, dan pecinta bahasa Arab dalam memahami struktur kata dengan lebih mudah dan akurat.
+""")
 
 # Fungsi Mesin
 @st.cache_resource
@@ -48,4 +53,14 @@ with col2:
 
 # Informasi di bawah
 st.divider()
-st.caption("Dikembangkan dengan Rofik menggunakan Streamlit dan Mishkal AI.")
+st.markdown("""
+    ### 📌 Cara Penggunaan:
+    1. **Tempelkan** teks Arab tanpa harakat pada kotak input di sebelah kiri.
+    2. **Klik tombol** "Beri Harakat Sekarang" untuk memulai proses.
+    3. **Salin hasil** yang muncul di kotak sebelah kanan untuk kebutuhan Anda.
+    
+    *Catatan: Hasil harakat dihasilkan secara otomatis oleh AI. Kami menyarankan untuk tetap melakukan pengecekan ulang (muroja'ah) untuk teks-teks keagamaan yang sangat formal.*
+    
+    ---
+    **Dikembangkan oleh [Rofik]** | Ditenagai oleh Mishkal Engine 🚀
+""")
