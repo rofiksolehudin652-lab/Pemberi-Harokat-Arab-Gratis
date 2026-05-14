@@ -13,29 +13,8 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🌙 Al-Mu'rib: Aplikasi Harakat Bahasa Arab")
-st.write("Berikan harakat pada teks Arab gundul secara otomatis.")
-st.markdown("""
-    <style>
-    .main {
-        background-color: #f0f2f6;
-    }
-    .stButton>button {
-        width: 100%;
-        border-radius: 20px;
-        background-color: #007bff;
-        color: white;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-col1, col2 = st.columns(2)
-
-with col1:
-    text_input = st.text_area("Masukkan Teks Arab:", height=300)
-
-with col2:
-    if 'hasil_harakat' in st.session_state:
-        st.text_area("Hasil Harakat:", value=st.session_state.hasil_harakat, height=300)
+st.title("🌙 Al-Mu'rib: Aplikasi Harakat Arab")
+st.write("Berikan harakat pada teks Arab gundul secara instan.")
 
 # Fungsi Mesin
 @st.cache_resource
@@ -49,16 +28,18 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Input Teks")
+    text_input = st.text_area("Tempelkan teks Arab di sini:", placeholder="...مرحبا كيف حالك", height=1000)
     tombol = st.button("✨ Beri Harakat Sekarang")
-   text_input = st.text_area("Hasil Teks Arab:", height=300)
+
 with col2:
+    st.subheader("Hasil")
     if tombol:
         if text_input.strip():
             with st.spinner("Sedang memproses..."):
                 try:
                     mesin = siapkan_mesin()
                     hasil = mesin.tashkeel(text_input)
-                    st.text_area("Hasil Harakat:", value=hasil, height=250)
+                    st.text_area("Hasil Harakat:", value=hasil, height=1000)
                     st.balloons() # Efek balon saat sukses
                 except Exception as e:
                     st.error(f"Maaf, ada kendala: {e}")
@@ -67,4 +48,4 @@ with col2:
 
 # Informasi di bawah
 st.divider()
-st.caption("Dikembangkan oleh Rofik menggunakan Streamlit dan Mishkal AI.")
+st.caption("Dikembangkan dengan Rofik menggunakan Streamlit dan Mishkal AI.")
