@@ -13,7 +13,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🌙 Al-Mu'rib: Aplikasi Harakat Arab")
+st.title("🌙 Al-Mu'rib: Aplikasi Harakat Bahasa Arab")
 st.write("Berikan harakat pada teks Arab gundul secara otomatis.")
 st.markdown("""
     <style>
@@ -61,4 +61,4 @@ with col2:
 
 # Informasi di bawah
 st.divider()
-st.caption("Dikembangkan dengan ❤️ menggunakan Streamlit dan Mishkal AI.")
+st.caption("Dikembangkan oleh Rofik menggunakan Streamlit dan Mishkal AI.")
